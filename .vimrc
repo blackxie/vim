@@ -33,20 +33,19 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " Nerdtree show bookmarks on startup
 :let NERDTreeShowBookmarks=1
 
-" MiniBuffExplorer
 :let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-:let g:miniBufExplMapWindowNavVim = 1
-:let g:miniBufExplMapWindowNavArrows = 1
-:let g:miniBufExplMapCTabSwitchBufs = 1
-:let g:miniBufExplModSelTarget = 1
 
 " code(omni)
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python.django set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType htmldjango.html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+
+" Indent Guide
+autocmd VimEnter * IndentGuidesEnable
+:let g:indent_guides_guide_size = 1
+:let g:indent_guides_start_level = 2
 
 """ Key Mappings
 " bind ctrl+space for omnicompletion
@@ -55,11 +54,6 @@ imap <c-space> <C-x><C-o>
 
 " Map Ctrl T to TagList
 map <C-t> <esc>:TlistToggle<enter>
-
-" Map Ctrl B to MiniBufExplorer
-map <C-b> <esc>:TMiniBufExplorer<enter>
-map <C-y> <esc>:MBEbn<enter>
-map <C-x> <esc>:MBEbp<enter>
 
 
 " Map Ctrl N to NerdTree
